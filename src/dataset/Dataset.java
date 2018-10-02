@@ -11,15 +11,19 @@ import java.util.Map;
 
 
 public class Dataset {
-	public ArrayList<String[]> raw_ratings;
+	private ArrayList<String[]> raw_ratings;   //原始的数据集
 	
 	public Dataset(ArrayList<String[]> raw_ratings) {
 		this.raw_ratings = raw_ratings;
 	}
 	
+	public ArrayList<String[]> get_raw_ratings() {
+		return this.raw_ratings;
+	}
+
 	/**
 	 * 将原始评分数据raw_ratings全部转换为训练集
-	 * @return Trainset对象
+	 * @return Trainset实例
 	 */
 	public Trainset built_full_trainset() {
 		Map<Integer, ArrayList<int[]>> ur = new HashMap<Integer, ArrayList<int[]>>();
@@ -53,7 +57,7 @@ public class Dataset {
 	
 	/**
 	 * 将原始评分数据raw_ratings全部转换为验证集
-	 * @return Testset对象
+	 * @return Testset实例
 	 */
 	public Testset built_full_testset() {
 		ArrayList<String[]> list = new ArrayList<String[]>();
@@ -64,12 +68,5 @@ public class Dataset {
 		return new Testset(list);
 	}
 	
-	public static void main(String[] args) {
-		Dataset dataset = LoadDataset.load_builtin("ml-100k");
-		Testset testset = dataset.built_full_testset();
-		for(String[] r : testset.testset) {
-			System.out.println(r[0] + " " + r[1] +" " + r[2]);
-		}
-	}
 }
 

@@ -8,12 +8,16 @@ package dataset;
 import java.util.ArrayList;
 
 public class Testset {
-	public ArrayList<String[]> testset;  //String[3]: ruid, riid, r_ui
+	private ArrayList<String[]> testset;  //Ô­Ê¼²âÊÔ¼¯
 
 	public Testset(ArrayList<String[]> testset) {
 		this.testset = testset;
 	}
-	
-	
 
+	public ArrayList<String[]> get_testset() {
+		return this.testset;
+	}
+	
+	
+	
 }

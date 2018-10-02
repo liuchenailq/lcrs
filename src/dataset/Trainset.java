@@ -12,27 +12,17 @@ import java.util.List;
 import java.util.Map;
 
 public class Trainset {
-	public Map<Integer, ArrayList<int[]>> ur;
-	public Map<Integer, ArrayList<int[]>> ir;
-	public int n_users;
-	public int n_items;
-	public int n_ratings;
-	private Map<String, Integer> raw2inner_id_users;
-	private Map<String, Integer> raw2inner_id_items;
-	private Map<Integer, String> inner2raw_id_users;
-	private Map<Integer, String> inner2raw_id_items;
-	private double global_mean;
+	public Map<Integer, ArrayList<int[]>> ur;   //用户-物品倒排表
+	public Map<Integer, ArrayList<int[]>> ir;   //物品-用户倒排表
+	public int n_users;   //用户数
+	public int n_items;   //物品数
+	public int n_ratings;  //评分数
+	private Map<String, Integer> raw2inner_id_users;  //原始userID到系统userID的映射
+	private Map<String, Integer> raw2inner_id_items;  //原始itemID到系统itemID的映射
+	private Map<Integer, String> inner2raw_id_users;  //系统userID到原始userID的映射
+	private Map<Integer, String> inner2raw_id_items;  //系统itemID到原始itemID的映射
+	private double global_mean;   //评分均值
 	
-	/**
-	 * 构造函数
-	 * @param ur  用户-评分的记录表
-	 * @param ir  物品-评分的记录表
-	 * @param n_users 用户数
-	 * @param n_items 物品数
-	 * @param n_ratings 评分数
-	 * @param raw2inner_id_users 原始userID到系统userID的映射
-	 * @param raw2inner_id_items 原始itemID到系统itemID的映射
-	 */
 	public Trainset(Map<Integer, ArrayList<int[]>> ur, Map<Integer, ArrayList<int[]>> ir, int n_users, int n_items,
 			int n_ratings, Map<String, Integer> raw2inner_id_users,
 			Map<String, Integer> raw2inner_id_items) {
@@ -107,7 +97,7 @@ public class Trainset {
 	
 	/**
 	 * 将训练集中可能的评分预测构成测试集
-	 * @return
+	 * @return Testset实例
 	 */
 	public Testset build_anti_testset() {
 		ArrayList<String[]> testset = new ArrayList<String[]>();
@@ -128,7 +118,7 @@ public class Trainset {
 	
 	/**
 	 *全局评分均值
-	 * @return
+	 * @return double
 	 */
 	public double global_mean() {
 		if (this.global_mean == -1.0) {
@@ -143,9 +133,5 @@ public class Trainset {
 		}
 		return this.global_mean;
 	}
-	
-	
-	
-	
 
 }

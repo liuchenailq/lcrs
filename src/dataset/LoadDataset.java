@@ -59,13 +59,4 @@ public class LoadDataset {
 		return new Dataset(raw_ratings);
 	}
 	
-	
-	public static void main(String[] args) {
-		Dataset dataset = LoadDataset.load_builtin("ml-100k");
-		ArrayList<String[]> raw_ratings = dataset.raw_ratings;
-		for(int i=0; i<raw_ratings.size();i++) {
-			System.out.println(raw_ratings.get(i)[0] + "  " + raw_ratings.get(i)[1] + "  " +raw_ratings.get(i)[2] + "  " +raw_ratings.get(i)[3]);
-		}
-		
-	}
 }

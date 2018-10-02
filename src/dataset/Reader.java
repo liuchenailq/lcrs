@@ -9,14 +9,9 @@ import java.util.List;
 import java.util.Arrays;
 
 public class Reader {
-	private String line_format;
-	private String separator;
+	private String line_format;   //文件的行格式，比如 "user item rating [timestamp]"
+	private String separator;     //字段分隔符
 	
-	/**
-	 * 构造函数
-	 * @param line_format 文件的格式 "user item rating [timestamp]"
-	 * @param separator 字段的分隔符
-	 */
 	public Reader(String line_format, String separator) {
 		this.line_format = line_format;
 		this.separator = separator;
@@ -48,11 +43,4 @@ public class Reader {
 		return rs;
 	}
 	
-	public static void main(String[] args) {
-		Reader reader = new Reader("item rating user", "\t");
-		String[] aa = reader.parse_line("a 	b	1");
-		for(int i=0;i<4;i++) {
-			System.out.println(aa[i]);
-		}
-	}
 }
