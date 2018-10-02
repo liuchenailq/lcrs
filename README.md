@@ -12,7 +12,7 @@ lcrs是用纯Java语言开发的推荐系统库。lcrs借鉴了[Python Surprise]
 
 ## 入门示例
 
-这是一个很简单的示例，该示例加载内置数据集[ml-100](http://files.grouplens.org/datasets/movielens/ml-100k/)，并使用5-折交叉验证对LFM算法进行rmse、mae测评。
+这是一个很简单的示例，该示例加载内置数据集[ml-100k](http://files.grouplens.org/datasets/movielens/ml-100k/)，并使用5-折交叉验证对LFM算法进行rmse、mae测评。
 
 ```Java
 Dataset data = LoadDataset.load_builtin("ml-100k");
