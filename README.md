@@ -5,6 +5,7 @@ lcrs是用纯Java语言开发的推荐系统库。lcrs借鉴了[Python Surprise]
 &ensp;&ensp;2.预测算法模块。此模块为用户提供了大量的评分预测算法，常见的有UserCF、ItemCF、LFM等。此模块的详细信息请看[这里](https://github.com/liuchenailq/lcrs/tree/master/src/prediction_algorithms)。   
 &ensp;&ensp;3.模型评价模块。此模块为用户提供了几种评价模型的方法。常见的评价指标有rmse、mae等。此模块的详细信息请看[这里](https://github.com/liuchenailq/lcrs/tree/master/src/accuracy)。   
 &ensp;&ensp;4.模型选择模块。此模块为用户提供了基于交叉验证思想的模型选择方法。常见的交叉验证有K折-交叉验证、留一法等。此模的详细信息请看[这里](https://github.com/liuchenailq/lcrs/tree/master/src/model_selection)。
+##文件说明
 
      
 
