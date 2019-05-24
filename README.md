@@ -1,4 +1,10 @@
 # lcrs
+
+|作者|刘臣|
+|---|---
+|E-mail|2422701543@qq.com, hdu.liuchen2020@gmail.com
+
+*****
 ## 综述
 lcrs是用纯Java语言开发的推荐系统库。lcrs借鉴了[Python Surprise](https://surprise.readthedocs.io/en/stable/index.html)库的设计思路，并对其进行了大量拓展。设计lcrs的主要目的有如下几点：    
 &ensp;&ensp;1.掌握推荐系统中经典的算法模型。lcrs实现了推荐系统中大部分的经典算法模型，每一个算法都是按照经典的论文（已在resource目录下整理好）进行实现的，这对深入理解算法的原理及其优劣很有好处。   
